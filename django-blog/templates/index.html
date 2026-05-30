@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if user.is_authenticated %}
+  <ul class="list-group mb-4">
+    {% for post in posts %}
+      <li class="list-group-item">
+        <div class="d-flex align-items-start">
+          {% if post.author.profile.profile_image %}
+            <img src="{{ post.author.profile.profile_image.url }}" alt="" class="rounded-circle mr-3" style="width:48px;height:48px;object-fit:cover;">
+          {% endif %}
+          <div class="flex-grow-1">
+            <p class="mb-1">{{ post.body }}</p>
+            <small class="text-muted">Posted by {{ post.author.username }} · {{ post.created_at|date:"M j, Y" }}</small>
+          </div>
+        </div>
+      </li>
+      {% if post.comments.all %}
+        <li class="list-group-item bg-light">
+          <strong>Comments</strong>
+          <ul class="list-unstyled mb-0 mt-2">
+            {% for comment in post.comments.all %}
+              <li class="mb-2">
+                <strong>{{ comment.author.username }}</strong>: {{ comment.text }}
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+      <li class="list-group-item">
+        <form action="{% url 'add_comment' post.id %}" method="post">
+          {% csrf_token %}
+          <div class="form-group mb-2">
+            <label for="comment-{{ post.id }}">Comment</label>
+            <textarea class="form-control" id="comment-{{ post.id }}" name="text" rows="2" required></textarea>
+          </div>
+          <button class="btn btn-sm btn-primary" type="submit">Submit comment</button>
+        </form>
+      </li>
+    {% empty %}
+      <li class="list-group-item">No posts yet. Be the first to share something.</li>
+    {% endfor %}
+  </ul>
+
+  <form action="{% url 'update' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="post-body"><strong>New post</strong></label>
+      <textarea class="form-control" id="post-body" name="body" rows="4" required></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Post</button>
+  </form>
+{% else %}
+  <p><a href="{% url 'login' %}">Log in</a> to view and create posts.</p>
+{% endif %}
+{% endblock %}

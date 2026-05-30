@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru');
+body{
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+nav{
+  /* transition: background-color 0.4s ease-out; */
+}
+.trans{
+  /* background: rgba(255,255,255,0); */
+}
+
+.homepage{
+  background-image: url("https://www.photocollage.com/tmp/5b93b64cc9233/collage.jpg?1536408612210");
+  position: relative;
+  min-height: 650px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left{
+  margin-left:10%;
+  margin-right:10%;
+}
