@@ -7,8 +7,10 @@
   <title>Django Learning Projects</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
-  <header class="header"><div class="header__inner">
+<body class="theme-django">
+  <div class="bg-animation" aria-hidden="true"></div>
+  <header class="header">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme"><span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">&#9728;</span><span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9789;</span></button><div class="header__inner">
     <span class="badge">Python · Django 5</span>
     <h1>Django Learning Projects</h1>
     <p>Two self-contained Django experiments in one monorepo — run locally with SQLite, not hosted on Vercel.</p>
@@ -52,5 +54,6 @@ python manage.py migrate && python manage.py runserver</pre>
     </section>
   </main>
   <footer class="site-footer footer"><p>MIT © 2026 · <a href="https://piyushm.dev">piyushm.dev</a> · <a href="https://github.com/PiyushMishra318/django-learning-projects" target="_blank" rel="noopener noreferrer">View on GitHub</a></p></footer>
+  <script src="/theme.js"></script>
 </body>
 </html>
