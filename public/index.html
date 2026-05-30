@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Django learning projects: REST API snippets and authenticated blog." />
+  <title>Django Learning Projects</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="header"><div class="header__inner">
+    <span class="badge">Python · Django 5</span>
+    <h1>Django Learning Projects</h1>
+    <p>Two self-contained Django experiments in one monorepo — run locally with SQLite, not hosted on Vercel.</p>
+  </div></header>
+  <main class="main">
+    <div class="grid-2">
+      <section class="card">
+        <h2>django-rest-api</h2>
+        <p>Django REST Framework API for code snippets with Pygments syntax highlighting, owner permissions, and JWT authentication.</p>
+        <ul>
+          <li>CRUD at <code>/snippets/</code></li>
+          <li>JWT at <code>/api/token/</code></li>
+          <li>Browsable API + HTML feed</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-rest-api">Source</a>
+        </div>
+      </section>
+      <section class="card">
+        <h2>django-blog</h2>
+        <p>Authenticated blog with posts, comments, user profiles, and profile search — consolidated from earlier Django 2 experiments.</p>
+        <ul>
+          <li>Registration & session login</li>
+          <li>Posts, comments, avatars</li>
+          <li>Profile search by username</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-blog">Source</a>
+        </div>
+      </section>
+    </div>
+    <section class="card">
+      <h2>Run locally</h2>
+      <pre>git clone https://github.com/PiyushMishra318/django-learning-projects.git
+cd django-learning-projects/django-rest-api   # or django-blog
+python -m venv .venv && .venv/Scripts/activate
+pip install -r requirements.txt
+python manage.py migrate && python manage.py runserver</pre>
+    </section>
+  </main>
+  <footer class="footer"><p>MIT © 2026 · <a href="https://piyushm.dev">piyushm.dev</a></p></footer>
+</body>
+</html>
