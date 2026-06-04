@@ -10,9 +10,9 @@
   <title>Django Learning Projects</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body class="theme-django portfolio-designed landing-page">
+<body class="theme-django portfolio-designed landing-v2 landing-page">
   <div class="bg-animation" aria-hidden="true"></div>
-  <header class="header landing-hero">
+  <header class="header landing-hero landing-hero--split">
         <div class="header__top">
       <a class="header__brand" href="https://piyushm.dev">piyushm.dev</a>
       <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme"><span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">&#9728;</span><span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">&#9789;</span></button>
@@ -23,42 +23,32 @@
     <p>Two self-contained Django experiments in one monorepo — run locally with SQLite. This page is the project overview; the Django apps themselves are not hosted here.</p>
   
       <a class="header__github" href="https://github.com/PiyushMishra318/django-learning-projects" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-    </div></header>
+    </div><aside class="hero-panel hero-panel--terminal" aria-hidden="true">
+      <span class="hero-panel__label">Overview</span>
+      <pre class="hero-panel__content">Django Learning Projects</pre>
+    </aside>
+  </header>
   <main class="page-main main">
+    <div class="stat-strip"><div class="stat-strip__item"><span class="stat-strip__value">2 apps</span><span class="stat-strip__label">Monorepo</span></div><div class="stat-strip__item"><span class="stat-strip__value">DRF</span><span class="stat-strip__label">REST + JWT</span></div><div class="stat-strip__item"><span class="stat-strip__value">Blog</span><span class="stat-strip__label">Auth + posts</span></div></div>
+    
+    
     <div class="grid-2">
       <section class="card">
         <h2>django-rest-api</h2>
-        <p>Django REST Framework API for code snippets with Pygments syntax highlighting, owner permissions, and JWT authentication.</p>
-        <ul>
-          <li>CRUD at <code>/snippets/</code></li>
-          <li>JWT at <code>/api/token/</code></li>
-          <li>Browsable API + HTML feed</li>
-        </ul>
-        <div class="actions">
-          <a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-rest-api">Source</a>
-        </div>
+        <p>DRF snippets API with Pygments, owner permissions, JWT at <code>/api/token/</code>.</p>
+        <div class="actions"><a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-rest-api">Source</a></div>
       </section>
       <section class="card">
         <h2>django-blog</h2>
-        <p>Authenticated blog with posts, comments, user profiles, and profile search — consolidated from earlier Django 2 experiments.</p>
-        <ul>
-          <li>Registration & session login</li>
-          <li>Posts, comments, avatars</li>
-          <li>Profile search by username</li>
-        </ul>
-        <div class="actions">
-          <a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-blog">Source</a>
-        </div>
+        <p>Posts, comments, avatars, and profile search — consolidated learning blog.</p>
+        <div class="actions"><a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects/tree/main/django-blog">Source</a></div>
       </section>
     </div>
-    <section class="card">
-      <h2>Run locally</h2>
-      <pre>git clone https://github.com/PiyushMishra318/django-learning-projects.git
-cd django-learning-projects/django-rest-api   # or django-blog
-python -m venv .venv && .venv/Scripts/activate
-pip install -r requirements.txt
-python manage.py migrate && python manage.py runserver</pre>
+    <section class="cta-band">
+      <div><strong>Ready to try it?</strong><p>Source and releases live on GitHub — install locally for the full experience.</p></div>
+      <div class="actions"><a class="btn" href="https://github.com/PiyushMishra318/django-learning-projects">View on GitHub</a><a class="btn btn--ghost" href="https://github.com/PiyushMishra318/django-learning-projects">Source</a></div>
     </section>
+    
   </main>
   <footer class="site-footer footer"><p>MIT © 2026 · <a href="https://piyushm.dev">piyushm.dev</a> · <a href="https://github.com/PiyushMishra318/django-learning-projects" target="_blank" rel="noopener noreferrer">View on GitHub</a></p></footer>
   <script src="/theme.js"></script>
